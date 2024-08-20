@@ -1,0 +1,5 @@
+.listItem:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
