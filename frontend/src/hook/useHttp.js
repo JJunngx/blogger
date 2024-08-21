@@ -4,7 +4,7 @@ const useHttp = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState();
-
+  const url_http = "https://blogger-3l52.onrender.com";
   const api = async (method, data, link, getdata, token) => {
     setLoading(true);
     try {
@@ -20,9 +20,11 @@ const useHttp = () => {
         Authorization: `Bearer ${token}`,
       };
       if (method === "get") {
-        res = await axios(`http://localhost:5000${link}`, { headers });
+        res = await axios(`${url_http}${link}`, {
+          headers,
+        });
       } else {
-        res = await axios[method](`http://localhost:5000${link}`, data, {
+        res = await axios[method](`${url_http}${link}`, data, {
           headers,
         });
       }
